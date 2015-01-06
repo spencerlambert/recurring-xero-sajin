@@ -7,6 +7,16 @@
 5. Automatically collects credit card payments and posts them to Xero
  
 # Details
+
+## Envisioned Functions
+
+* new
+* addItem
+* updateItem
+* setRepeating
+* setStart
+* more...
+
 ## MongoDB Collection
 
 A mongodb collection will track the subscriptions.  A subscription will start with an "open" status.  When the subscription is past the end date, the object will be duplicated with a new start and end date.  While the object is being copied the status will change to "closing".  A new invoice will be created in Xero and a the new subscription will get added to the mongodb. The recurring billing happens as old subscriptions get replaced with new ones.
