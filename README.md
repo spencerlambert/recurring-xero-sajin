@@ -10,11 +10,12 @@
 
 ## Envisioned Functions
 
-* new
-* addItem
-* updateItem
-* setRepeating
-* setStart
+* new()
+* getAllItems()
+* addItem(item)
+* updateItem(item)
+* setRepeating(repeat_obj)
+* setStart(date)
 * more...
 
 ## MongoDB Collection
