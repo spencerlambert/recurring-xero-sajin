@@ -22,7 +22,7 @@
 
 A mongodb collection will track the subscriptions.  A subscription will start with an "open" status.  When the subscription is past the end date, the object will be duplicated with a new start and end date.  While the object is being copied the status will change to "closing".  A new invoice will be created in Xero and a the new subscription will get added to the mongodb. The recurring billing happens as old subscriptions get replaced with new ones.
 
-## A Sample Entry for a Subscription
+## A Sample Mongo Entry for a Subscription
 ```
 {
 	_id: standard mongo id object,
