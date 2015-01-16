@@ -18,6 +18,20 @@
 * setStart(date)
 * more...
 
+## Envisioned Modules
+
+#### Subscription UI
+
+This is the UI that talks to the Subscription module.  Think of it like Accounts UI in relation to Accounts.
+
+#### Subscription
+
+This is the module that you'll be working on.  It interfaces with the MongoDB.
+
+#### Subscription Billing
+
+This module is a backend module that reads the MongoDB, creates the invoices in Xero and closes and opens new subscriptions in the MongoDB.
+
 ## MongoDB Collection
 
 A mongodb collection will track the subscriptions.  A subscription will start with an "open" status.  When the subscription is past the end date, the object will be duplicated with a new start and end date.  While the object is being copied the status will change to "closing".  A new invoice will be created in Xero and a the new subscription will get added to the mongodb. The recurring billing happens as old subscriptions get replaced with new ones.
