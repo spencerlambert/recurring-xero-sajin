@@ -1,4 +1,4 @@
-# Project Goals
+# Project Goalss
 
 1. Tracks subscriptions associated with a customer
 2. Handles upgrades and downgrades of a subscription
