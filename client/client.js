@@ -1,21 +1,8 @@
+Subscription = new Mongo.Collection("subscription");
+
 if (Meteor.isClient) {
-  /*// counter starts at 0
-  Session.setDefault("counter", 0);
 
-  Template.subscription.helpers({
-    counter: function () {
-      return Session.get("counter");
-    }
-  });
-
-  Template.subscription.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set("counter", Session.get("counter") + 1);
-    }
-  });*/
-
-
+/*helpers*/  
   Template.body.helpers({
     tasks: [
       { text: "This is task 1" },
@@ -23,6 +10,25 @@ if (Meteor.isClient) {
       { text: "This is task 3" }
     ]
   });
+
+
+/*events*/  
+  Template.body.events({
+    "submit .new-subscription": function (event) {
+      var subName = event.target.subName.value;
+      console.log("subName:",subName);
+      Subscription.insert({
+        name: subName,
+        createdAt: new Date() // current time
+      });
+
+      event.target.subName.value = "";
+
+      return false;
+    }
+  });
+
+
 }
 
 
